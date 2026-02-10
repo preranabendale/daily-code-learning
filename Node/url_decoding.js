@@ -1,0 +1,3 @@
+ function Map(val,index)=>{
+
+}
