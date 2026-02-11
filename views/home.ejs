@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp UI Clone</title>
+  <style>
+    
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+  
+    .sidebar {
+      width: 30%;
+      background-color: #075E54;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #128C7E;
+    }
+
+    .profile img {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .profile h2 {
+      font-size: 18px;
+    }
+
+    .search {
+      padding: 10px;
+      border-bottom: 1px solid #128C7E;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+
+    .contacts {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .contact:hover {
+      background-color: #128C7E;
+    }
+
+    .contact img {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .contact-info h4 {
+      font-size: 16px;
+    }
+
+    .contact-info p {
+      font-size: 12px;
+      color: #d1d1d1;
+    }
+
+    
+    .chat-area {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      background-color: #ECE5DD;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background-color: #128C7E;
+      color: white;
+      border-bottom: 1px solid #075E54;
+    }
+
+    .chat-header img {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .message {
+      max-width: 60%;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .message p {
+      margin-bottom: 5px;
+    }
+
+    .message span {
+      font-size: 10px;
+      color: gray;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+    }
+
+    .sent {
+      background-color: #DCF8C6;
+      align-self: flex-end;
+    }
+
+    .received {
+      background-color: white;
+      align-self: flex-start;
+    }
+
+ 
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      background-color: #f0f0f0;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .chat-input button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      border: none;
+      background-color: #128C7E;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .chat-input button:hover {
+      background-color: #075E54;
+    }
+
+    
+    .contacts::-webkit-scrollbar,
+    .messages::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .contacts::-webkit-scrollbar-thumb,
+    .messages::-webkit-scrollbar-thumb {
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+ 
+    <div class="sidebar">
+      <div class="profile">
+        <img src="https://i.pravatar.cc/40" alt="profile">
+        <h2>Prerana</h2>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search or start new chat">
+      </div>
+      <div class="contacts">
+        <div class="contact">
+          <img src="https://i.pravatar.cc/50?img=1" alt="Sattu">
+          <div class="contact-info">
+            <h4>Sattu</h4>
+            <p>Hey, how are you?</p>
+          </div>
+        </div>
+        <div class="contact">
+          <img src="https://i.pravatar.cc/50?img=2" alt="Riya">
+          <div class="contact-info">
+            <h4>Riya</h4>
+            <p>Let's meet tomorrow</p>
+          </div>
+        </div>
+        <div class="contact">
+          <img src="https://i.pravatar.cc/50?img=3" alt="Family">
+          <div class="contact-info">
+            <h4>Family</h4>
+            <p>Group Chat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="chat-area">
+      <div class="chat-header">
+        <img src="https://i.pravatar.cc/50?img=1" alt="Sattu">
+        <h3>Sattu</h3>
+      </div>
+
+      <div class="messages">
+        <div class="message received">
+          <p>Hello Prerana!</p>
+          <span>10:00 AM</span>
+        </div>
+        <div class="message sent">
+          <p>Hi Sattu! How are you?</p>
+          <span>10:01 AM</span>
+        </div>
+        <div class="message received">
+          <p>I'm good. Did you complete your project?</p>
+          <span>10:02 AM</span>
+        </div>
+        <div class="message sent">
+          <p>Yes, I completed it yesterday.</p>
+          <span>10:03 AM</span>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <input type="text" placeholder="Type a message...">
+        <button>Send</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
