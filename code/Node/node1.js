@@ -84,11 +84,35 @@
 // data.map(()=>{
     
 // })
-function A(callback){
-    callback()
-    console.log("function a")
+
+
+
+function A(){
+    console.log("Function a")
 }
 function B(){
-    console.log("Fnciton b")
+    console.log("Function b")
 }
-B(A)
+A(B)
+
+//obj
+const obj={
+    id:1,
+    "name":"prerana",
+    "email":"prerana@gmail.com"
+}
+console.log(obj)
+
+
+//map method
+array.map((value, index) => {
+   return newValue;
+})
+
+const marks = [50,60,70];
+
+const updatedMarks = marks.map((m)=>{
+   return m + 5;
+});
+
+console.log(updatedMarks);
